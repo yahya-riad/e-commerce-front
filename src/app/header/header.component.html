@@ -1,0 +1,8 @@
+<header>
+  <h1><a routerLink="/products">Alten E-Commerce</a></h1>
+  <nav *ngIf="isAuthenticated()">
+    <a routerLink="/contact">Contact</a>
+    <a routerLink="/cart">Panier 🛒 <span class="badge">{{ cartCount }}</span></a>
+    <button class="logout-btn" (click)="logout()">Se déconnecter</button>
+  </nav>
+</header>

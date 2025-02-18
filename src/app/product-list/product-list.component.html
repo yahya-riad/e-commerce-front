@@ -1,0 +1,35 @@
+<div class="product-list">
+  <div class="sort-options">
+    <label for="pageSize">Nombre de produits par page:</label>
+    <input id="pageSize" [(ngModel)]="pageSize" (change)="loadProducts()">
+
+    <label for="sortField">Trier par:</label>
+    <select id="sortField" [(ngModel)]="sortField" (change)="loadProducts()">
+      <option value="name">Nom</option>
+      <option value="price">Prix</option>
+      <option value="rating">Note</option>
+    </select>
+
+    <label for="sortOrder">Ordre de tri:</label>
+    <select id="sortOrder" [(ngModel)]="sortOrder" (change)="loadProducts()">
+      <option value="asc">Ascendant</option>
+      <option value="desc">Descendant</option>
+    </select>
+  </div>
+
+  <div *ngIf="products.length === 0">Aucun produit trouvé.</div>
+
+  <div *ngFor="let product of products" class="product-card">
+    <h2>{{ product.name }}</h2>
+    <p>{{ product.description }}</p>
+    <p><strong>{{ product.price }}€</strong></p>
+    <button (click)="addToCart(product)">Ajouter au panier</button>
+  </div>
+
+  <mat-paginator
+    [length]="totalProducts"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="[5, 10, 15, 20]"
+    (page)="onPageChange($event)">
+  </mat-paginator>
+</div>

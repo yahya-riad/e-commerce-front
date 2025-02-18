@@ -1,0 +1,14 @@
+<div class="contact-form">
+  <h2>Contact</h2>
+  <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+    <label>Email :</label>
+    <input type="email" name="email" ngModel required>
+    <div *ngIf="contactForm.submitted && contactForm.controls['email']?.invalid" class="error">Champ obligatoire</div>
+
+    <label>Message :</label>
+    <textarea name="message" ngModel required maxlength="300"></textarea>
+    <div *ngIf="contactForm.submitted && contactForm.controls['message']?.invalid" class="error">Champ obligatoire</div>
+
+    <button type="submit">Envoyer</button>
+  </form>
+</div>

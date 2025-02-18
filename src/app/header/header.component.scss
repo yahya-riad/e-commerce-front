@@ -1,0 +1,64 @@
+/* Style du conteneur header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #2c3e50; /* Couleur de fond */
+  color: white;
+}
+
+/* Style pour le titre */
+header h1 a {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Style pour la navigation */
+nav {
+  display: flex;
+  gap: 20px; /* Espace entre les éléments de la nav */
+  align-items: center;
+}
+
+/* Style des liens de navigation */
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #34495e; /* Couleur de fond au survol */
+}
+
+/* Style pour le badge */
+.badge {
+  background-color: #e74c3c;
+  color: white;
+  border-radius: 50%;
+  padding: 3px 8px;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+/* Style du bouton de déconnexion */
+.logout-btn {
+  padding: 8px 16px;
+  font-size: 16px;
+  color: white;
+  background-color: #e74c3c;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #c0392b; /* Couleur au survol */
+}
